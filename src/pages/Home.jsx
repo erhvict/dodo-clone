@@ -25,22 +25,29 @@ const Home = () => {
     dispatch(setCurrentPage(number));
   };
 
-  useEffect(() => {
+  const fetchPizzas = async () => {
     const search = searchValue ? `&search=${searchValue}` : '';
     setIsLoading(true);
 
-    axios
-      .get(
+    try {
+      const res = await axios.get(
         `https://6589738a324d41715258fc04.mockapi.io/items?page=${currentPage}&limit=8&${
           categoryId > 0 ? `category=${categoryId}` : ''
         }&sortBy=${sort.sortProperty}&order=desc${search}`,
-      )
-      .then((response) => {
-        setItems(response.data);
-        setIsLoading(false);
-      });
+      );
+      setItems(res.data);
+    } catch (error) {
+      console.log('Error', error);
+      alert('Непредвиденная ошибка! Вернитесь чуть позже :)');
+    } finally {
+      setIsLoading(false);
+    }
 
     window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    fetchPizzas();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   const pizzas = items.map((obj) => <PizzaBlock {...obj} key={obj.id} />);
