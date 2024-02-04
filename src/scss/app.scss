@@ -111,6 +111,8 @@ body {
     align-items: center;
     cursor: pointer;
     @include noselect();
+    background: none;
+    border: none;
 
     span {
       display: inline-block;
