@@ -7,14 +7,15 @@ import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Sort from '../components/Sort';
 import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
+import { setItems } from '../redux/slices/pizzasSlice';
 import { SearchContext } from './../App';
 
 const Home = () => {
   const dispatch = useDispatch();
   const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
+  const items = useSelector((state) => state.pizza.items);
 
   const { searchValue } = useContext(SearchContext);
-  const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const onClickCategory = (id) => {
@@ -30,12 +31,12 @@ const Home = () => {
     setIsLoading(true);
 
     try {
-      const res = await axios.get(
+      const { data } = await axios.get(
         `https://6589738a324d41715258fc04.mockapi.io/items?page=${currentPage}&limit=8&${
           categoryId > 0 ? `category=${categoryId}` : ''
         }&sortBy=${sort.sortProperty}&order=desc${search}`,
       );
-      setItems(res.data);
+      dispatch(setItems(data));
     } catch (error) {
       console.log('Error', error);
       alert('Непредвиденная ошибка! Вернитесь чуть позже :)');
