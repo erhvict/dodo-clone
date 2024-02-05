@@ -15,7 +15,7 @@
   <h3 align="center">Dodo Pizza Clone</h3>
 
   <p align="center">
-    Упрощенный клон DodoPizza
+    A simplified clone of DodoPizza
     <br />
     <br />
     <a href="https://pizza-clone.erhvict.ru/">View Demo</a>
@@ -69,10 +69,6 @@ Welcome to the DodoPizza Clone project! This initiative aims to recreate the ren
 - [![Lodash][Lodash.io]][Lodash-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## Getting Started
 
 ### Installation
 
