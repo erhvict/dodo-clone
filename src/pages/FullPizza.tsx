@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const FullPizza = () => {
@@ -22,7 +22,7 @@ const FullPizza = () => {
   }, []);
 
   if (!pizza) {
-    return 'Загрузка...';
+    return <>Загрузка...</>;
   }
 
   return (

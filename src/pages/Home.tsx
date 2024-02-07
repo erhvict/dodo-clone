@@ -5,9 +5,8 @@ import { Pagination } from '../components/Pagination';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Sort from '../components/Sort';
-import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
+import { selectFilterData, setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 import { fetchPizzas, selectPizzaData } from '../redux/slices/pizzasSlice';
-import { selectFilterData } from './../redux/slices/filterSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
