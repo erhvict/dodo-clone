@@ -51,7 +51,7 @@ Welcome to the DodoPizza Clone project! This initiative aims to recreate the ren
 ### Built With
 
 - [![React][React.js]][React-url]
-- [![TypeScript][TS.org]][TS-url]
+- [![TypeScript][TS.com]][TS-url]
 - [![Redux][Redux.js.org]][Redux-url]
 - [![Axios][Axios.com]][Axios-url]
 - [![Sass][Sass.com]][Sass-url]
