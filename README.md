@@ -51,6 +51,7 @@ Welcome to the DodoPizza Clone project! This initiative aims to recreate the ren
 ### Built With
 
 - [![React][React.js]][React-url]
+- [![TypeScript][TS.org]][TS-url]
 - [![Redux][Redux.js.org]][Redux-url]
 - [![Axios][Axios.com]][Axios-url]
 - [![Sass][Sass.com]][Sass-url]
@@ -96,3 +97,5 @@ Welcome to the DodoPizza Clone project! This initiative aims to recreate the ren
 [Sass-url]: https://sass-lang.com/
 [Axios.com]: https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white
 [Axios-url]: https://axios-http.com/
+[TS.com]: https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=white
+[TS-url]: https://www.typescriptlang.org/
