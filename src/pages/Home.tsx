@@ -9,6 +9,7 @@ import { selectFilterData } from '../redux/filter/selectors';
 import { setCategoryId, setCurrentPage } from '../redux/filter/slice';
 import { fetchPizzas } from '../redux/pizza/asyncActions';
 import { selectPizzaData } from '../redux/pizza/selectors';
+import { Pizza } from '../redux/pizza/types';
 import { useAppDispatch } from '../redux/store';
 
 const Home: React.FC = () => {
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
     getPizzas();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const pizzas = items.map((obj: any) => <PizzaBlock {...obj} key={obj.id} />);
+  const pizzas = items.map((obj: Pizza) => <PizzaBlock {...obj} key={obj.id} />);
 
   const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
 
